@@ -1,0 +1,18 @@
+{
+  "pages": [
+        "pages/draw/draw",
+        
+      "pages/index/index",
+ 
+ 
+    
+    "pages/screen/screen",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFF00",
+    "navigationBarTitleText": "你画我猜",
+    "navigationBarTextStyle": "black"
+  }
+}

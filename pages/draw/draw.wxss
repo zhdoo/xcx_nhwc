@@ -1,0 +1,121 @@
+/* pages/draw/draw.wxss */
+.main{
+   height: 100%;
+  background-color: #f3f3f3;
+}
+.topTitle{
+  width: 100%;
+  height: 100rpx;
+  background-color: #f3f3f3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userAvatar{
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 10rpx;
+  box-shadow: 7rpx 7rpx 0 #FF0099;
+}
+.guessQuestion{
+  display: flex;
+  flex: 1;
+  color:#FF0099;
+  padding-left: 20rpx;
+  font-size: 26rpx;
+   flex-direction: row;
+}
+.refreshBtn{
+  width: 35rpx;
+  height: 35rpx;
+  margin-left: 10rpx;
+}
+
+.mineQuestion{
+  display: flex;
+  color:#777;
+  font-size: 26rpx;
+  flex-direction: row;
+  margin-right: 10rpx;
+ 
+}
+.penInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 30rpx;
+}
+.penWidth{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+   align-items: center;
+}
+.colorInfo{
+  display: flex;
+  flex-direction: row;
+}
+.colorInfoList{
+  margin-top: 10rpx;
+  height: 60rpx;
+  align-items: center;
+overflow:hidden;white-space:nowrap;
+
+}
+.penInfoTitle,.colorInfoTitle{
+  width: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #777;
+   font-size: 30rpx;
+   margin-right: 20rpx;
+}
+.penWidthItem{
+  width: 70rpx;
+  height: 60rpx;
+  display: flex;
+   flex-direction: row;
+   align-items: center;
+     justify-content: center;
+}
+.colorInfoItem{
+  display:inline-block; 
+  width: 60rpx; 
+  height: 60rpx;
+  margin-left: 20rpx;
+  margin-top: 12.5rpx;
+}
+.colorInfoItemColor{
+  
+width:40rpx;height:40rpx;  
+}
+.clearBtn{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+     justify-content: center;
+     margin-right: 10rpx;
+}
+.bottomBtn{
+  width: 100%;
+  height: 350rpx;
+  margin-top: 50rpx;
+}
+.bottomBtn view{
+  width: 80%;
+  margin-left: 10%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.bottomBtn view:first-child{
+  background-color: #FFFF00;
+
+}
+.bottomBtn view:last-child{
+  background-color: #777;
+  margin-top: 20rpx;
+}

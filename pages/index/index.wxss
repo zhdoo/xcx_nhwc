@@ -1,0 +1,42 @@
+.main{
+
+}
+.topSub{
+  width: 100%;
+  display: flex;
+  font-size: 30rpx;
+  background-color: #FF0099;
+  color: #fff;
+  padding: 10rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.topSub:first-child{
+  flex: 2;
+}
+.subBtn{
+  display: block;
+  flex: 0.4;
+  background: #fff;
+  color: #000;
+  border: none;
+  font-size: 25rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  line-height: 40rpx;
+
+}
+.topBanner{
+  width: 100%;
+}
+.drawToFriend{
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #FFFF00;
+  font-size: 40rpx;
+  margin-left: 10%;
+  margin-top: 30rpx;
+}
