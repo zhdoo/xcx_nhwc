@@ -9,17 +9,36 @@
       <image class='refreshBtn' src="{{'../../static/image/refresh.png'}}">
       </image>
     </view>
-    <view class='mineQuestion'>
+    <view bindtouchstart='touchStartBtn'  bindtouchend='touchEndBtn'  class='mineQuestion' bindtap='showQuestionForm'>
       <view>自己出题</view>
       <image style='width: 35rpx; height: 35rpx;' src="{{'../../static/image/lightning.png'}}"></image>
     </view>
   </view>
-  <canvas style="width:100%; height: 300px;background:#ffffff" canvas-id="firstCanvas" disable-scroll="true" bindtouchstart="touchStartLine" bindtouchmove='touchMoveLine' bindtouchend='touchEndLine'></canvas>
+  <canvas style="width:100%; height: 300px;background:#ffffff;display:{{showCanvas==false?'none':'block'}}" canvas-id="firstCanvas" disable-scroll="true" bindtouchstart="touchStartLine" bindtouchmove='touchMoveLine' bindtouchend='touchEndLine'></canvas>
+  <view class='createQuestion' style='display:{{showCanvas==false?"block":"none"}};'  >
+  <view  class='questionForm'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="questionAsk">
+        <view class="questionAskInfo">答案</view>
+        <input name="ask" placeholder="1-8字（例：周杰伦）" />
+      </view>
+      <view class="questionAsk">
+        <view class="questionAskInfo">提示</view>
+        <input name="askInfo" placeholder="1-8字（例：男明星）" />
+      </view>
 
+      <view class="btn-area">
+          <view>取消</view>
+         <view>确定</view>
+      </view>
+    </form>
+    <view class='tishi'>优质题目会被系统收藏哦！</view>
+    </view>
+  </view>
   <view class='penInfo'>
     <view class='penInfoTitle'>粗细</view>
     <view class='penWidth'>
-      <view class='penWidthItem' bindtap='setWidth' data-width="{{item.size/2}}" data-idx="{{index}}" wx:for="{{penList}}" wx:key="unique" >
+      <view class='penWidthItem' bindtap='setWidth' data-width="{{item.size/2}}" data-idx="{{index}}" wx:for="{{penList}}" wx:key="unique">
         <view wx:if="{{selectPenIdx==index}}">
           <view style='width:{{item.size}}rpx;padding:5rpx;border:5rpx solid #ffffff;background-color:#f3f3f3;border-radius:{{(item.size/2)+10}}rpx'>
             <view style="width: {{item.size}}rpx; height: {{item.size}}rpx;border-radius:{{item.size/2}}rpx;background-color:{{penColor}}"></view>
@@ -33,26 +52,34 @@
 
       </view>
     </view>
-    <view class='clearBtn' bindtap='backOne'><image src="{{'../../static/image/revoke.png'}}" style='width:60rpx;height:60rpx'></image></view>
+    <view class='clearBtn' bindtap='backOne'>
+      <image src="{{'../../static/image/revoke.png'}}" style='width:60rpx;height:60rpx'></image>
+    </view>
 
-  <view  wx:if="{{isClear}}">
-   <view class='clearBtn' bindtap='clear' style='background-color:#fff;padding:5rpx;border-radius:10rpx'><image src="{{'../../static/image/xiangpi.png'}}" style='width:35rpx;height:35rpx;'></image> <view> 橡皮</view></view>
-  </view>
-  <view wx:else>
-     <view class='clearBtn' bindtap='clear' style='padding:5rpx;'><image src="{{'../../static/image/xiangpi.png'}}" style='width:35rpx;height:35rpx'></image> <view> 橡皮</view></view>
+    <view wx:if="{{isClear}}">
+      <view class='clearBtn' bindtap='clear' style='background-color:#fff;padding:5rpx;border-radius:10rpx'>
+        <image src="{{'../../static/image/xiangpi.png'}}" style='width:35rpx;height:35rpx;'></image>
+        <view> 橡皮</view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class='clearBtn' bindtap='clear' style='padding:5rpx;'>
+        <image src="{{'../../static/image/xiangpi.png'}}" style='width:35rpx;height:35rpx'></image>
+        <view> 橡皮</view>
+      </view>
 
-  </view>
-   
-
-
-    <view class='clearBtn' bindtap='clearAll'><image src="{{'../../static/image/delete.png'}}" style='width:35rpx;height:35rpx'></image> <view> 清除</view></view>
+    </view>
+    <view class='clearBtn' bindtap='clearAll'>
+      <image src="{{'../../static/image/delete.png'}}" style='width:35rpx;height:35rpx'></image>
+      <view> 清除</view>
+    </view>
   </view>
 
   <view class='colorInfo'>
     <view class='colorInfoTitle'>颜色</view>
     <scroll-view scroll-x class='colorInfoList' style="width:{{pageWidth-60}}px">
 
-      <view bindtap='setColor' data-color="{{item.color}}" data-idx="{{index}}" class='colorInfoItem' wx:for="{{colorList}}" wx:key="unique" >
+      <view bindtap='setColor' data-color="{{item.color}}" data-idx="{{index}}" class='colorInfoItem' wx:for="{{colorList}}" wx:key="unique">
         <view class='colorInfoItemColor' style='background:{{item.color}}'></view>
         <view wx:if="{{selectColorIdx==index}}">
           <view style='width:40rpx;height:4rpx;background-color:{{item.color}};margin-top:4rpx'></view>
@@ -61,8 +88,7 @@
     </scroll-view>
   </view>
   <view class='bottomBtn'>
-  
-      <view>发起猜猜</view>
-      <view>发起红包猜猜</view>
+    <view>发起猜猜</view>
+    <view>发起红包猜猜</view>
   </view>
 </view>

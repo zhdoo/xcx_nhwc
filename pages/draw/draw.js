@@ -5,6 +5,7 @@ const ctx = wx.createCanvasContext('firstCanvas')
 var types = ['default', 'primary', 'warn']
 Page({
   data: {
+    animationData: {},
     defaultSize: 'default',
     primarySize: 'default',
     warnSize: 'default',
@@ -15,6 +16,7 @@ Page({
     userInfo:null,
     penColor:'#000000',
     penWidth:4,
+    showCanvas:true,
     penList:[
       {'size':8},
       { 'size': 20 },
@@ -67,6 +69,13 @@ Page({
       key: "backList",
       data: []
     })
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease',
+    })
+
+
+    that.animation = animation
 
    
     wx.getSystemInfo({
@@ -307,5 +316,14 @@ Page({
        
       },
     })
+  },
+  showQuestionForm:function(){
+    let showForm = this.data.showCanvas==false?true:false;
+    this.setData({
+      showCanvas:showForm
+    })
+  },
+  touchStartBtn:function(e){
+    console.log(e)
   }
 })
