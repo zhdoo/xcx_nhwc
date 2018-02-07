@@ -1,13 +1,11 @@
 {
   "pages": [
-        "pages/draw/draw",
-        
-      "pages/index/index",
- 
- 
-    
+"pages/draw/draw",
+
+        "pages/index/index",
     "pages/screen/screen",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/poster/poster"
   ],
   "window": {
     "backgroundTextStyle": "light",

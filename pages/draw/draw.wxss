@@ -57,10 +57,13 @@
   flex-direction: row;
 }
 .colorInfoList{
+   display: flex;
+  flex-direction: row;
   margin-top: 10rpx;
-  height: 60rpx;
   align-items: center;
-overflow:hidden;white-space:nowrap;
+overflow:hidden;
+white-space:nowrap;
+justify-content: center
 
 }
 .penInfoTitle,.colorInfoTitle{
@@ -122,6 +125,10 @@ width:40rpx;height:40rpx;
   margin-top: 20rpx;
   color: #ffffff;
   padding: 10rpx;
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .createQuestion{
   width: 80%;

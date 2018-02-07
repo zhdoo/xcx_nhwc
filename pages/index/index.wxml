@@ -2,8 +2,9 @@
 <view class="container main">
   <view class='topSub'>
     <view>关注‘你画我猜’，不再错过TA的赞赏</view>
-    <button class='subBtn' open-type="contact">关注</button>
+    <button class='subBtn'hover-class='hoverClass' open-type="contact">关注</button>
   </view>
   <image class='topBanner' src="{{'https://api.zsxcx.com/public/apiimg/banner2.jpg'}}"></image>
-  <navigator  class='drawToFriend' url="/pages/draw/draw" >画画给朋友猜</navigator>
+  <navigator hover-class='hoverClass'   class='drawToFriend' url="/pages/draw/draw" >画画给朋友猜</navigator>
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">11111 </button>
 </view>

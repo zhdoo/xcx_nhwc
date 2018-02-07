@@ -4,13 +4,13 @@
     <view class='userAvatar'>
       <image style='width:100%;height:100%' src="{{userInfo.avatarUrl}}"></image>
     </view>
-    <view class='guessQuestion'>
-      <view>题目：氧气瓶</view>
+    <view class='guessQuestion' bindtap='resetDrawTitle'>
+      <view>题目：{{drawTitle}}</view>
       <image class='refreshBtn' src="{{'../../static/image/refresh.png'}}">
       </image>
     </view>
-    <view bindtouchstart='touchStartBtn'  bindtouchend='touchEndBtn'  class='mineQuestion' bindtap='showQuestionForm'>
-      <view>自己出题</view>
+    <view bindtouchstart='touchStartBtn'  class='mineQuestion' bindtap='showQuestionForm'>
+      <view hover-class='hoverClass'>自己出题</view>
       <image style='width: 35rpx; height: 35rpx;' src="{{'../../static/image/lightning.png'}}"></image>
     </view>
   </view>
@@ -20,16 +20,16 @@
     <form bindsubmit="formSubmit" bindreset="formReset">
       <view class="questionAsk">
         <view class="questionAskInfo">答案</view>
-        <input name="ask" placeholder="1-8字（例：周杰伦）" />
+        <input name="drawTitle" placeholder="1-8字（例：周杰伦）" bindinput='setInputDrawTitle' value='{{customTitle}}' />
       </view>
       <view class="questionAsk">
         <view class="questionAskInfo">提示</view>
-        <input name="askInfo" placeholder="1-8字（例：男明星）" />
+        <input name="askInfo" placeholder="1-8字（例：男明星）"  bindinput='setInputDrawDescription' value='{{customDescription}}' />
       </view>
 
       <view class="btn-area">
-          <view>取消</view>
-         <view>确定</view>
+        <view bindtap='resetForm'  hover-class='hoverClass'>取消</view>
+        <view bindtap='submitForm' hover-class='hoverClass'>确定</view>
       </view>
     </form>
     <view class='tishi'>优质题目会被系统收藏哦！</view>
@@ -52,7 +52,7 @@
 
       </view>
     </view>
-    <view class='clearBtn' bindtap='backOne'>
+    <view class='clearBtn' bindtap='backOne' hover-class='hoverClass'>
       <image src="{{'../../static/image/revoke.png'}}" style='width:60rpx;height:60rpx'></image>
     </view>
 
@@ -69,7 +69,7 @@
       </view>
 
     </view>
-    <view class='clearBtn' bindtap='clearAll'>
+    <view class='clearBtn' bindtap='clearAll'  hover-class='hoverClass'>
       <image src="{{'../../static/image/delete.png'}}" style='width:35rpx;height:35rpx'></image>
       <view> 清除</view>
     </view>
@@ -80,15 +80,18 @@
     <scroll-view scroll-x class='colorInfoList' style="width:{{pageWidth-60}}px">
 
       <view bindtap='setColor' data-color="{{item.color}}" data-idx="{{index}}" class='colorInfoItem' wx:for="{{colorList}}" wx:key="unique">
-        <view class='colorInfoItemColor' style='background:{{item.color}}'></view>
         <view wx:if="{{selectColorIdx==index}}">
-          <view style='width:40rpx;height:4rpx;background-color:{{item.color}};margin-top:4rpx'></view>
+          <view class='colorInfoItemColor' style='background:{{item.color}};width:40rpx;height:40rpx;transform:scale(1.1,1.1)'></view>
+          <view style='width:40rpx;height:4rpx;background-color:{{item.color}};margin-top:6rpx;transform:scaleX(1.1)'></view>
         </view>
+         <view wx:else>
+           <view class='colorInfoItemColor' style='background:{{item.color}}'></view>
+         </view>
       </view>
     </scroll-view>
   </view>
   <view class='bottomBtn'>
-    <view>发起猜猜</view>
-    <view>发起红包猜猜</view>
+    <view hover-class='hoverClass'>发起猜猜</view>
+    <view hover-class='hoverClass'> <text> 发起红包猜猜</text><image style='width:60rpx;height:60rpx;' src='../../static/image/redbag.png'></image></view>
   </view>
 </view>
